@@ -507,4 +507,4 @@ build.
 
 ## License
 
-No license has been declared for this repository yet.
+This package is licensed under [Apache License 2.0](./LICENSE)
