@@ -27,7 +27,7 @@ audio decoding, filtering, and playback inside Node.js worker threads.
 
 ## Requirements
 
-- **Node.js 20+**, tested on Node.js 24.
+- **Node.js 20.3+**, tested on Node.js 24.
 - **`discord-player` `^8.0.0-dev.10`** installed in your bot.
 - A platform with prebuilt binaries for `node-av`, `@mediabunny/server`, and
   `mediaplex`. Windows x64, macOS, and common Linux targets are supported.
