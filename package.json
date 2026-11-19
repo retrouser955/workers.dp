@@ -1,0 +1,57 @@
+{
+  "name": "workers.dp",
+  "version": "1.0.3",
+  "packageManager": "yarn@1.22.1",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./worker": {
+      "import": {
+        "types": "./dist/worker.d.mts",
+        "default": "./dist/worker.mjs"
+      },
+      "require": {
+        "types": "./dist/worker.d.cts",
+        "default": "./dist/worker.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "discord-player": "^8.0.0-dev.10"
+  },
+  "devDependencies": {
+    "@discord-player/plugin-host": "^8.0.0-dev.10",
+    "@types/node": "^26.6.6",
+    "discord-player": "^8.0.0-dev.10",
+    "tsdown": "^0.23.7",
+    "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "@discord-player/opus": "^7.2.0",
+    "@discordjs/voice": "^0.19.2",
+    "@mediabunny/server": "^1.66.0",
+    "discord-api-types": "^0.38.59",
+    "mediabunny": "^1.66.0",
+    "mediaplex": "^1.0.0",
+    "node-av": "^7.1.0"
+  }
+}
