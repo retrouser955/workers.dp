@@ -29,8 +29,9 @@ audio decoding, filtering, and playback inside Node.js worker threads.
 
 - **Node.js 20.3+**, tested on Node.js 24.
 - **`discord-player` `^8.0.0-dev.10`** installed in your bot.
-- A platform with prebuilt binaries for `node-av`, `@mediabunny/server`, and
-  `mediaplex`. Windows x64, macOS, and common Linux targets are supported.
+- A platform with binaries available for `node-av`, `@mediabunny/server`, and
+  `mediaplex`. Prebuilts exist for Windows x64, macOS, and common Linux targets;
+  verify your OS/CPU combination before deploying.
 - Extractor packages compatible with the same `discord-player` version your bot
   uses.
 
@@ -321,6 +322,11 @@ therefore per worker and are not shared with the main query host.
 | `connectTimeoutMs` | `number` | `15000` | Deadline for voice connections |
 | `maxRespawns` | `number` | `10` | Global worker respawn budget |
 | `workerData` | `unknown` | none | Data passed to workers; custom worker entries may consume it |
+
+When `sources` is configured, `workerData` is wrapped as
+`{ __workersDpSources: { sources, userData: workerData } }` before it reaches
+the worker. The bundled worker ignores `userData`; it exists for custom worker
+entries.
 
 ### `sources`
 
